@@ -2,7 +2,6 @@ import csv
 import xml.etree.ElementTree as ET
 
 
-# Читаем книги из CSV-файла
 def read_books():
     with open("books.csv", "r", encoding="windows-1251") as file:
         reader = csv.reader(file, delimiter=";")
@@ -10,7 +9,6 @@ def read_books():
         return list(reader)
 
 
-# 1. Считаем книги, названия которых длиннее 30 символов
 def count_long_titles(books):
     count = 0
 
@@ -21,7 +19,6 @@ def count_long_titles(books):
     print("Книг с названием длиннее 30 символов:", count)
 
 
-# 2. Ищем книги по автору
 def search_by_author(books):
     author = input("Введите имя или фамилию автора: ").strip().lower()
     found = 0
@@ -37,7 +34,6 @@ def search_by_author(books):
         print("Найдено книг:", found)
 
 
-# 3. Создаём библиографические ссылки для 20 книг
 def create_bibliography(books):
     with open("result.txt", "w", encoding="utf-8") as file:
         for number, book in enumerate(books[:20], start=1):
@@ -51,7 +47,6 @@ def create_bibliography(books):
     print("Список из 20 записей сохранён в result.txt")
 
 
-# 4. Получаем два списка из XML
 def read_currencies():
     tree = ET.parse("currency.xml")
     root = tree.getroot()
