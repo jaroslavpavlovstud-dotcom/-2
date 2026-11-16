@@ -76,6 +76,3 @@ def main():
     create_bibliography(books)
     read_currencies()
 
-
-if __name__ == "__main__":
-    main()
