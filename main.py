@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 def read_books():
     with open("books.csv", "r", encoding="windows-1251") as file:
         reader = csv.reader(file, delimiter=";")
-        next(reader, None)  # Пропускаем заголовок
+        next(reader, None)
         return list(reader)
 
 
